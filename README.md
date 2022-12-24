@@ -10,11 +10,11 @@ P(B|A) Indicates the sum of the probabilities of all possible combinations in th
 
 p(B|Ä) Indicates the sum of the probabilities of all combinations that satisfy the current environment in the case where the current query grid is false.
 
-Get Goal
+# Get Goal:
 After calculating the P(pit) and P(wumpus) of each frontier, we have to choose the best one, that is, where we are going, which is mainly implemented in the get_goal(). The principle is to first determine the current state of wumpus, if we have not found wumpus, that is, we have not found the point of P(wumpus)=1, we will find that P(pit) is less than a default value, and P(wumpus) is as small as possible. If we do not find it once, we will increase the default value . until we find this goal, at this time when we find the goal if the P(wumpus) of the goal is bigger than a default value, then we will do action of shoot, here is to consider the the fourth map. And when we have found wumpus, we will choose the grid with the smallest P(pit) as the goal. If wumpus is not dead at this time, and the location of wumpus is my goal, if I have an arrow, then I will shoot.
 
-Move Goal
+# Move Goal:
 After getting the goal, we will execute the method move_to_goal() .For example, if we want to turn to right, if the grid adjacent to our grid’s right is known and not pit, we can move right. If the current grid only has unknown grids and pits, then we would only take the direction of the pit. But at first , we need to find if there is way to move. check all the grids between the goal and current position. If all way is unknown or pits, we will change the goal. we will execute the method change_goal().
 
-Change Goal
+# Change Goal:
 In the method change_goal(), we set the current goal unreachable, it mainly helps us to “remove” the current goal, then we find the new goal by Naive Bayes.
