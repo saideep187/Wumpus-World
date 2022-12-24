@@ -2,7 +2,8 @@
 The overall steps are divided into two steps. The first step is to find the next grid to arrive, then the second step is how to reach this grid. To know where to go next, first, calculate the probability of pits and wumpus for all grids you might reach next. It's calculated by Naive_bayes. Then select the best grid based on the environment at the time. After getting the goal, move to that grid.
 
 # Naive Bayes:
-The Naive concept: the assumption of independence, assuming that the features are independent and irrelevant. Given the Known, frontier, and query variables, the observed phenomena are conditionally independent of other variables. This is mainly implemented in the get_probability() .
+The Naive concept: the assumption of independence, assuming that the features are independent and irrelevant. Given the Known, frontier, and query variables, the observed phenomena are conditionally independent of other variables. This is mainly implemented in the get_probability().
+Krw8CF.gif
 
 # P(A|B):
 represents the pit or wumpus probability of the grid to be queried according to the current actual environmental conditions. In our logic, first we get all the frontier combinations by binary calculation, and assume that the query frontier is true or false, and then remove some assumptions that do not conform to the current actual environment. Then calculate the value of P(pit) or P(wumpus) one by one from the frontier. According to the formula, to calculate the probability that the current grid is pit, calculate P(B|A) and KrwrCD.gif
